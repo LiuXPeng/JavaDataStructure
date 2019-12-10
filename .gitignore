@@ -1,0 +1,7 @@
+*.pdf
+*.war
+*.java
+autoPush.sh
+.idea
+.iml
+mdNum.py
