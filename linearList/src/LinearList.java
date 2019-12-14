@@ -1,8 +1,9 @@
 import java.util.List;
 
 public abstract class LinearList <T>{
-    public abstract void linklist();
-    public abstract void linklist(List<T> c);
+    private abstract class Node {}
+//    public abstract void linklist();
+//    public abstract void linklist(List<T> c);
     public abstract T getfirst();
     public abstract T getlast();
     public abstract T removefirst();

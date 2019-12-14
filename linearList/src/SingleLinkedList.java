@@ -1,43 +1,88 @@
 import java.util.List;
 
-public class SingleLinkedList extends LinearList{
-    @Override
-    public void linklist() {
 
+//单链表
+public class SingleLinkedList <T> extends LinearList{
+
+    private Node head;
+
+    private class Node {
+        private T data = null;
+        private Node next = null;
+        public Node (T t) {
+            this.data = t;
+        }
     }
 
-    @Override
-    public void linklist(List c) {
+//    @Override
+//    public void linklist() {
+//
+//    }
+//
+//    @Override
+//    public void linklist(List c) {
+//
+//    }
 
+    public SingleLinkedList (T c) {
+        this.head = new Node(c);
     }
+
+    public SingleLinkedList () {
+        this.head = new Node(null);
+    }
+
 
     @Override
     public Object getfirst() {
-        return null;
+        return head;
     }
 
     @Override
     public Object getlast() {
-        return null;
+        if (this.head.next == null) {
+            return head;
+        }
+        Node pre = this.head;
+        Node cur = pre.next;
+        while (cur != null) {
+            pre = cur;
+            cur = cur.next;
+        }
+        return pre;
     }
 
     @Override
     public Object removefirst() {
+        this.head = this.head.next;
         return null;
     }
 
     @Override
-    public Object removelast() {
-        return null;
+    public void removelast() {
+        if (this.head.next == null) {
+            this.removefirst();
+            return;
+        }
+        Node pre = this.head;
+        Node cur = pre.next;
+        while (cur.next != null) {
+            pre = cur;
+            cur = cur.next;
+        }
+        pre.next = null;
     }
 
     @Override
     public void addfirst(Object o) {
-
+        Node newfirst = new Node(o);
+        newfirst.next = this.head;
+        this.head = newfirst;
     }
 
     @Override
     public void addlast(Object o) {
+        Object oldlast = this.getlast();
 
     }
 
