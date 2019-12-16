@@ -1,6 +1,5 @@
 import java.util.List;
 
-
 //单链表
 public class SingleLinkedList <T> extends LinearList{
 
@@ -13,6 +12,7 @@ public class SingleLinkedList <T> extends LinearList{
             this.data = t;
         }
     }
+
 
 //    @Override
 //    public void linklist() {
@@ -72,9 +72,9 @@ public class SingleLinkedList <T> extends LinearList{
         }
         pre.next = null;
     }
-
+    
     @Override
-    public void addfirst(Object o) {
+    public void addfirst(T o) {
         Node newfirst = new Node(o);
         newfirst.next = this.head;
         this.head = newfirst;
@@ -83,7 +83,7 @@ public class SingleLinkedList <T> extends LinearList{
     @Override
     public void addlast(Object o) {
         Object oldlast = this.getlast();
-
+        oldlast.next = o;
     }
 
     @Override
@@ -104,6 +104,11 @@ public class SingleLinkedList <T> extends LinearList{
     @Override
     public boolean remove(Object o) {
         return false;
+    }
+
+    @Override
+    public void addall(List c) {
+
     }
 
     @Override
