@@ -39,9 +39,9 @@ public class SingleLinkedList <T> extends LinearList{
     }
 
     @Override
-    public Object getlast() {
+    public T getlast() {
         if (this.head.next == null) {
-            return head;
+            return (T) head;
         }
         Node pre = this.head;
         Node cur = pre.next;
@@ -49,7 +49,7 @@ public class SingleLinkedList <T> extends LinearList{
             pre = cur;
             cur = cur.next;
         }
-        return pre;
+        return (T) pre;
     }
 
     @Override
@@ -72,10 +72,10 @@ public class SingleLinkedList <T> extends LinearList{
         }
         pre.next = null;
     }
-    
+
     @Override
-    public void addfirst(T o) {
-        Node newfirst = new Node(o);
+    public void addfirst(Object o) {
+        Node newfirst = new Node((T) o);
         newfirst.next = this.head;
         this.head = newfirst;
     }

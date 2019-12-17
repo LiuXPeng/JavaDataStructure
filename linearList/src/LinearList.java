@@ -7,7 +7,7 @@ public abstract class LinearList <T>{
     public abstract T getfirst();
     public abstract T getlast();
     public abstract T removefirst();
-    public abstract T removelast();
+    public abstract void removelast();
     public abstract void addfirst(T o);
     public abstract void addlast(T o);
     public abstract boolean contains(T o);
