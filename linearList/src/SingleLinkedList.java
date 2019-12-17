@@ -1,7 +1,7 @@
 import java.util.List;
 
 //单链表
-public class SingleLinkedList <T> extends LinearList{
+public class SingleLinkedList <T> {
 
     private Node head;
 
@@ -33,15 +33,13 @@ public class SingleLinkedList <T> extends LinearList{
     }
 
 
-    @Override
-    public Object getfirst() {
+    public Node getfirst() {
         return head;
     }
 
-    @Override
-    public T getlast() {
+    public Node getlast() {
         if (this.head.next == null) {
-            return (T) head;
+            return head;
         }
         Node pre = this.head;
         Node cur = pre.next;
@@ -49,16 +47,13 @@ public class SingleLinkedList <T> extends LinearList{
             pre = cur;
             cur = cur.next;
         }
-        return (T) pre;
+        return pre;
     }
 
-    @Override
-    public Object removefirst() {
+    public void removefirst() {
         this.head = this.head.next;
-        return null;
     }
 
-    @Override
     public void removelast() {
         if (this.head.next == null) {
             this.removefirst();
@@ -73,85 +68,99 @@ public class SingleLinkedList <T> extends LinearList{
         pre.next = null;
     }
 
-    @Override
-    public void addfirst(Object o) {
-        Node newfirst = new Node((T) o);
+    public void addfirst(T o) {
+        Node newfirst = new Node(o);
         newfirst.next = this.head;
         this.head = newfirst;
     }
 
-    @Override
-    public void addlast(Object o) {
-        Object oldlast = this.getlast();
-        oldlast.next = o;
+    public void addlast(T o) {
+        if (getfirst().data == null) {
+            getfirst().data = o;
+            return;
+        }
+        this.getlast().next = new Node(o);
     }
 
-    @Override
-    public boolean contains(Object o) {
+    public boolean contains(T o) {
+        Node cur = getfirst();
+        while (cur != null) {
+            if (cur.data == o) {
+                return true;
+            }
+            cur = cur.next;
+        }
         return false;
     }
 
-    @Override
     public int size() {
+        Node cur = getfirst();
+        int length = 0;
+        while (cur != null) {
+            length += 1;
+            cur = cur.next;
+        }
         return 0;
     }
 
-    @Override
-    public boolean add(Object o) {
+//    public boolean add(T o) {
+//        return false;
+//    }
+
+    public boolean remove(T o) {
+        if (getfirst().data == o) {
+            removefirst();
+            return true;
+        }
+        Node pre = getfirst();
+        Node cur = pre.next;
+        while (cur != null) {
+            if (cur.data == o) {
+                pre.next = cur.next;
+                return true;
+            }
+            pre = cur;
+            cur = cur.next;
+        }
         return false;
     }
 
-    @Override
-    public boolean remove(Object o) {
-        return false;
-    }
-
-    @Override
     public void addall(List c) {
 
     }
 
-    @Override
     public void addall(List c) {
 
     }
 
-    @Override
     public boolean addall(int index, List c) {
         return false;
     }
 
-    @Override
     public void clear() {
 
     }
 
-    @Override
     public Object get(int index) {
         return null;
     }
 
-    @Override
     public void set(int index, Object o) {
 
     }
 
-    @Override
     public void add(int index, Object o) {
 
     }
 
-    @Override
     public void remove(int index) {
 
     }
 
-    @Override
     public int indexof(Object o) {
         return 0;
     }
 
-    @Override
     public int lastindexof(Object o) {
         return 0;
     }
