@@ -1,26 +1,26 @@
 import java.util.List;
 
-public abstract class LinearList <T>{
+public abstract class LinearList {
     private abstract class Node {}
 //    public abstract void linklist();
 //    public abstract void linklist(List<T> c);
-    public abstract T getfirst();
-    public abstract T getlast();
-    public abstract T removefirst();
+    public abstract Object getfirst();
+    public abstract Object getlast();
+    public abstract Object removefirst();
     public abstract void removelast();
-    public abstract void addfirst(T o);
-    public abstract void addlast(T o);
-    public abstract boolean contains(T o);
+    public abstract void addfirst(Object o);
+    public abstract void addlast(Object o);
+    public abstract boolean contains(Object o);
     public abstract int size();
-    public abstract boolean add(T o);
-    public abstract boolean remove(T o);
-    public abstract void addall(List<T> c);
-    public abstract boolean addall(int index, List<T> c);
+    public abstract boolean add(Object o);
+    public abstract boolean remove(Object o);
+    public abstract void addall(List c);
+    public abstract boolean addall(int index, List c);
     public abstract void clear();
-    public abstract T get(int index);
-    public abstract void set(int index, T o);
-    public abstract void add(int index, T o);
+    public abstract Object get(int index);
+    public abstract void set(int index, Object o);
+    public abstract void add(int index, Object o);
     public abstract void remove(int index);
-    public abstract int indexof(T o);
-    public abstract int lastindexof(T o);
+    public abstract int indexof(Object o);
+    public abstract int lastindexof(Object o);
 }

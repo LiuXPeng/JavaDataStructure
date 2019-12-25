@@ -1,14 +1,14 @@
 import java.util.List;
 
 //单链表
-public class SingleLinkedList <T> {
+public class SingleLinkedList extends LinearList {
 
     private Node head;
 
     private class Node {
-        private T data = null;
+        private Object data = null;
         private Node next = null;
-        public Node (T t) {
+        public Node (Object t) {
             this.data = t;
         }
     }
@@ -24,7 +24,7 @@ public class SingleLinkedList <T> {
 //
 //    }
 
-    public SingleLinkedList (T c) {
+    public SingleLinkedList (Object c) {
         this.head = new Node(c);
     }
 
@@ -68,13 +68,13 @@ public class SingleLinkedList <T> {
         pre.next = null;
     }
 
-    public void addfirst(T o) {
+    public void addfirst(Object o) {
         Node newfirst = new Node(o);
         newfirst.next = this.head;
         this.head = newfirst;
     }
 
-    public void addlast(T o) {
+    public void addlast(Object o) {
         if (getfirst().data == null) {
             getfirst().data = o;
             return;
@@ -82,7 +82,7 @@ public class SingleLinkedList <T> {
         this.getlast().next = new Node(o);
     }
 
-    public boolean contains(T o) {
+    public boolean contains(Object o) {
         Node cur = getfirst();
         while (cur != null) {
             if (cur.data == o) {
@@ -103,11 +103,16 @@ public class SingleLinkedList <T> {
         return 0;
     }
 
+    @Override
+    public boolean add(Object o) {
+        return false;
+    }
+
 //    public boolean add(T o) {
 //        return false;
 //    }
 
-    public boolean remove(T o) {
+    public boolean remove(Object o) {
         if (getfirst().data == o) {
             removefirst();
             return true;
