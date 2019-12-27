@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="0c88a232-b1a6-489a-be32-fb90188ebf20" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/linearList.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/LinearList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/LinearList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/SingleLinkedList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/SingleLinkedList.java" afterDir="false" />
     </list>
@@ -30,10 +26,16 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
-    <property name="project.structure.last.edited" value="Global Libraries" />
+    <property name="node.js.detected.package.eslint" value="true" />
+    <property name="node.js.detected.package.tslint" value="true" />
+    <property name="node.js.path.for.package.eslint" value="project" />
+    <property name="node.js.path.for.package.tslint" value="project" />
+    <property name="node.js.selected.package.eslint" value="(autodetect)" />
+    <property name="node.js.selected.package.tslint" value="(autodetect)" />
+    <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="editor.preferences.fonts.default" />
+    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -59,6 +61,10 @@
       <updated>1576511812017</updated>
       <workItem from="1576511815337" duration="1252000" />
       <workItem from="1576570730171" duration="1285000" />
+      <workItem from="1576596059475" duration="2595000" />
+      <workItem from="1577287484485" duration="1226000" />
+      <workItem from="1577289034690" duration="1195000" />
+      <workItem from="1577459955009" duration="3245000" />
     </task>
     <task id="LOCAL-00001" summary="something in SingleLinkedList is wrong.">
       <created>1576513023101</created>
@@ -67,7 +73,21 @@
       <option name="project" value="LOCAL" />
       <updated>1576513023101</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="something in SingleLinkedList is wrong.">
+      <created>1576598783621</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1576598783621</updated>
+    </task>
+    <task id="LOCAL-00003" summary="将泛型改成Object">
+      <created>1577290198113</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1577290198113</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -78,7 +98,9 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
           </value>
         </entry>
       </map>
@@ -86,32 +108,42 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="something in SingleLinkedList is wrong." />
-    <option name="LAST_COMMIT_MESSAGE" value="something in SingleLinkedList is wrong." />
+    <MESSAGE value="将泛型改成Object" />
+    <option name="LAST_COMMIT_MESSAGE" value="将泛型改成Object" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="580" y="125" key="#com.intellij.ide.util.MemberChooser" timestamp="1576512912930">
-      <screen x="0" y="0" width="1549" height="831" />
+    <state x="552" y="178" key="#Notifications" timestamp="1577287782176">
+      <screen x="0" y="0" width="1920" height="1040" />
+    </state>
+    <state x="552" y="178" key="#Notifications/0.0.1920.1040@0.0.1920.1040" timestamp="1577287782176" />
+    <state x="719" y="156" key="#com.intellij.ide.util.MemberChooser" timestamp="1577290043124">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="580" y="125" key="#com.intellij.ide.util.MemberChooser/0.0.1549.831@0.0.1549.831" timestamp="1576512912930" />
+    <state x="719" y="156" key="#com.intellij.ide.util.MemberChooser/0.0.1920.1040@0.0.1920.1040" timestamp="1577290043124" />
     <state x="626" y="305" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog" timestamp="1576512484309">
       <screen x="0" y="0" width="1549" height="831" />
     </state>
     <state x="626" y="305" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1549.831@0.0.1549.831" timestamp="1576512484309" />
-    <state x="391" y="9" key="CommitChangelistDialog2" timestamp="1576513022132">
-      <screen x="0" y="0" width="1549" height="831" />
+    <state x="485" y="11" key="CommitChangelistDialog2" timestamp="1577290196218">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="391" y="9" key="CommitChangelistDialog2/0.0.1549.831@0.0.1549.831" timestamp="1576513022132" />
-    <state x="284" y="0" key="SettingsEditor" timestamp="1576570764240">
-      <screen x="0" y="0" width="1549" height="831" />
+    <state x="485" y="11" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1577290196218" />
+    <state x="352" y="0" key="SettingsEditor" timestamp="1577289151753">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="284" y="0" key="SettingsEditor/0.0.1549.831@0.0.1549.831" timestamp="1576570764240" />
-    <state x="367" y="149" key="Vcs.Push.Dialog.v2" timestamp="1576513044278">
-      <screen x="0" y="0" width="1549" height="831" />
+    <state x="352" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1577289151753" />
+    <state x="455" y="186" key="Vcs.Push.Dialog.v2" timestamp="1577290211433">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="367" y="149" key="Vcs.Push.Dialog.v2/0.0.1549.831@0.0.1549.831" timestamp="1576513044278" />
-    <state x="473" y="240" key="com.intellij.ide.util.TipDialog" timestamp="1576570730971">
-      <screen x="0" y="0" width="1549" height="831" />
+    <state x="455" y="186" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1577290211433" />
+    <state x="606" y="543" key="com.intellij.ide.util.TipDialog" timestamp="1577460469880">
+      <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="473" y="240" key="com.intellij.ide.util.TipDialog/0.0.1549.831@0.0.1549.831" timestamp="1576570730971" />
+    <state x="606" y="543" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577460469880" />
   </component>
 </project>

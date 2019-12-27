@@ -28,19 +28,18 @@ public class SingleLinkedList extends LinearList {
         this.head = new Node(c);
     }
 
+
     public SingleLinkedList () {
         this.head = new Node(null);
     }
 
-
+    @Override
     public Node getfirst() {
         return head;
     }
 
+    @Override
     public Node getlast() {
-        if (this.head.next == null) {
-            return head;
-        }
         Node pre = this.head;
         Node cur = pre.next;
         while (cur != null) {
@@ -50,10 +49,13 @@ public class SingleLinkedList extends LinearList {
         return pre;
     }
 
+    @Override
     public void removefirst() {
         this.head = this.head.next;
+        return;
     }
 
+    @Override
     public void removelast() {
         if (this.head.next == null) {
             this.removefirst();
@@ -68,12 +70,14 @@ public class SingleLinkedList extends LinearList {
         pre.next = null;
     }
 
+    @Override
     public void addfirst(Object o) {
         Node newfirst = new Node(o);
         newfirst.next = this.head;
         this.head = newfirst;
     }
 
+    @Override
     public void addlast(Object o) {
         if (getfirst().data == null) {
             getfirst().data = o;
@@ -82,6 +86,7 @@ public class SingleLinkedList extends LinearList {
         this.getlast().next = new Node(o);
     }
 
+    @Override
     public boolean contains(Object o) {
         Node cur = getfirst();
         while (cur != null) {
@@ -93,14 +98,18 @@ public class SingleLinkedList extends LinearList {
         return false;
     }
 
+    @Override
     public int size() {
+        if (getfirst().next == null && getfirst().data == null) {
+            return 0;
+        }
         Node cur = getfirst();
         int length = 0;
         while (cur != null) {
             length += 1;
             cur = cur.next;
         }
-        return 0;
+        return length;
     }
 
     @Override
@@ -108,10 +117,8 @@ public class SingleLinkedList extends LinearList {
         return false;
     }
 
-//    public boolean add(T o) {
-//        return false;
-//    }
 
+    @Override
     public boolean remove(Object o) {
         if (getfirst().data == o) {
             removefirst();
@@ -130,42 +137,55 @@ public class SingleLinkedList extends LinearList {
         return false;
     }
 
+    @Override
     public void addall(List c) {
-
+        if (this.size() != 0) {
+            Node lastNode = this.getlast();
+            for (Object o : c) {
+                Node newNode = new Node(o);
+                lastNode.next = newNode;
+                lastNode = newNode;
+            }
+        }
+        
     }
 
-    public void addall(List c) {
-
-    }
-
+    @Override
     public boolean addall(int index, List c) {
         return false;
     }
 
+    @Override
     public void clear() {
 
     }
 
+    @Override
     public Object get(int index) {
         return null;
     }
 
+    @Override
     public void set(int index, Object o) {
 
     }
 
+    @Override
     public void add(int index, Object o) {
 
     }
 
+    @Override
     public void remove(int index) {
 
     }
 
+    @Override
     public int indexof(Object o) {
         return 0;
     }
 
+    @Override
     public int lastindexof(Object o) {
         return 0;
     }

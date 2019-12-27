@@ -6,7 +6,7 @@ public abstract class LinearList {
 //    public abstract void linklist(List<T> c);
     public abstract Object getfirst();
     public abstract Object getlast();
-    public abstract Object removefirst();
+    public abstract void removefirst();
     public abstract void removelast();
     public abstract void addfirst(Object o);
     public abstract void addlast(Object o);
