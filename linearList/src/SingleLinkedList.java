@@ -11,6 +11,9 @@ public class SingleLinkedList extends LinearList {
         public Node (Object t) {
             this.data = t;
         }
+        public Node () {
+            this.data = null;
+        }
     }
 
 
@@ -52,7 +55,6 @@ public class SingleLinkedList extends LinearList {
     @Override
     public void removefirst() {
         this.head = this.head.next;
-        return;
     }
 
     @Override
@@ -161,22 +163,47 @@ public class SingleLinkedList extends LinearList {
 
     @Override
     public boolean addall(int index, List c) {
-        return false;
+        if (this.size() <= index) {
+            return false;
+        }
+        Node breakPiont = this.head;
+        for (int i = 0; i < index; i++ ) {
+            breakPiont = breakPiont.next;
+        }
+        Node BackPointOfbreakPiont = breakPiont.next;
+        for (Object o : c) {
+            Node node = new Node(o);
+            breakPiont.next = node;
+            breakPiont = breakPiont.next;
+        }
+        breakPiont.next = BackPointOfbreakPiont;
+        return true;
     }
 
     @Override
     public void clear() {
-
+        this.head = new Node();
     }
 
     @Override
     public Object get(int index) {
-        return null;
+        if (index >= this.size()) {
+            return null;
+        }
+        Node node = this.head;
+        for (int i = 0; i <= index; i++) {
+            node = node.next;
+        }
+        return node.data;
     }
 
     @Override
-    public void set(int index, Object o) {
-
+    public boolean set(int index, Object o) {
+        if (index >= this.size()) {
+            return false;
+        }
+        
+        return true;
     }
 
     @Override
