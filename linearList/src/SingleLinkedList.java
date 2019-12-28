@@ -139,6 +139,9 @@ public class SingleLinkedList extends LinearList {
 
     @Override
     public void addall(List c) {
+        if (c.size() == 0) {
+            return;
+        }
         if (this.size() != 0) {
             Node lastNode = this.getlast();
             for (Object o : c) {
@@ -146,8 +149,14 @@ public class SingleLinkedList extends LinearList {
                 lastNode.next = newNode;
                 lastNode = newNode;
             }
+            return;
         }
-        
+        this.head.data = c.get(0);
+        Node lastNode = this.head;
+        for (int i = 1; i < c.size(); i++) {
+            lastNode.next = new Node(c.get(i));
+            lastNode = lastNode.next;
+        }
     }
 
     @Override
