@@ -19,8 +19,8 @@ public abstract class LinearList {
     public abstract void clear();
     public abstract Object get(int index);
     public abstract boolean set(int index, Object o);
-    public abstract void add(int index, Object o);
-    public abstract void remove(int index);
+    public abstract boolean add(int index, Object o);
+    public abstract boolean remove(int index);
     public abstract int indexof(Object o);
     public abstract int lastindexof(Object o);
 }

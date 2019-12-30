@@ -35,7 +35,7 @@
     <property name="project.structure.last.edited" value="Project" />
     <property name="project.structure.proportion" value="0.0" />
     <property name="project.structure.side.proportion" value="0.2" />
-    <property name="settings.editor.selected.configurable" value="configurable.group.language" />
+    <property name="settings.editor.selected.configurable" value="preferences.pluginManager" />
   </component>
   <component name="ServiceViewManager">
     <option name="viewStates">
@@ -65,7 +65,10 @@
       <workItem from="1577287484485" duration="1226000" />
       <workItem from="1577289034690" duration="1195000" />
       <workItem from="1577459955009" duration="3548000" />
-      <workItem from="1577518439980" duration="3859000" />
+      <workItem from="1577518439980" duration="3887000" />
+      <workItem from="1577599592537" duration="2251000" />
+      <workItem from="1577636466428" duration="285000" />
+      <workItem from="1577720290773" duration="2477000" />
     </task>
     <task id="LOCAL-00001" summary="something in SingleLinkedList is wrong.">
       <created>1576513023101</created>
@@ -102,7 +105,14 @@
       <option name="project" value="LOCAL" />
       <updated>1577554474936</updated>
     </task>
-    <option name="localTasksCounter" value="6" />
+    <task id="LOCAL-00006" summary="set">
+      <created>1577555861652</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1577555861652</updated>
+    </task>
+    <option name="localTasksCounter" value="7" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -126,7 +136,8 @@
     <MESSAGE value="将泛型改成Object" />
     <MESSAGE value="addall" />
     <MESSAGE value="addall is complete" />
-    <option name="LAST_COMMIT_MESSAGE" value="addall is complete" />
+    <MESSAGE value="set" />
+    <option name="LAST_COMMIT_MESSAGE" value="set" />
   </component>
   <component name="WindowStateProjectService">
     <state x="552" y="178" key="#Notifications" timestamp="1577287782176">
@@ -142,11 +153,11 @@
       <screen x="0" y="0" width="1549" height="831" />
     </state>
     <state x="626" y="305" key="#com.intellij.ide.util.projectWizard.JdkChooserPanel.MyDialog/0.0.1549.831@0.0.1549.831" timestamp="1576512484309" />
-    <state x="761" y="71" key="CommitChangelistDialog2" timestamp="1577554472530">
+    <state x="761" y="71" key="CommitChangelistDialog2" timestamp="1577555860168">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="391" y="9" key="CommitChangelistDialog2/0.0.1549.831@0.0.1549.831" timestamp="1576513022132" />
-    <state x="761" y="71" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1577554472530" />
+    <state x="761" y="71" key="CommitChangelistDialog2/0.0.1920.1040@0.0.1920.1040" timestamp="1577555860168" />
     <state x="740" y="275" key="FileChooserDialogImpl" timestamp="1577463786942">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
@@ -155,21 +166,21 @@
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="747" y="231" key="RollbackChangesDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577554201357" />
-    <state x="352" y="0" key="SettingsEditor" timestamp="1577289151753">
+    <state x="352" y="0" key="SettingsEditor" timestamp="1577636421312">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="284" y="0" key="SettingsEditor/0.0.1549.831@0.0.1549.831" timestamp="1576570764240" />
-    <state x="352" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1577289151753" />
-    <state x="455" y="186" key="Vcs.Push.Dialog.v2" timestamp="1577554485076">
+    <state x="352" y="0" key="SettingsEditor/0.0.1920.1040@0.0.1920.1040" timestamp="1577636421312" />
+    <state x="455" y="186" key="Vcs.Push.Dialog.v2" timestamp="1577555867418">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="367" y="149" key="Vcs.Push.Dialog.v2/0.0.1549.831@0.0.1549.831" timestamp="1576513044278" />
-    <state x="455" y="186" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1577554485076" />
-    <state x="606" y="543" key="com.intellij.ide.util.TipDialog" timestamp="1577518444275">
+    <state x="455" y="186" key="Vcs.Push.Dialog.v2/0.0.1920.1040@0.0.1920.1040" timestamp="1577555867418" />
+    <state x="606" y="543" key="com.intellij.ide.util.TipDialog" timestamp="1577720297938">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>
     <state x="473" y="240" key="com.intellij.ide.util.TipDialog/0.0.1549.831@0.0.1549.831" timestamp="1576570730971" />
-    <state x="606" y="543" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577518444275" />
+    <state x="606" y="543" key="com.intellij.ide.util.TipDialog/0.0.1920.1040@0.0.1920.1040" timestamp="1577720297938" />
     <state x="334" y="130" key="new project wizard" timestamp="1577463761590">
       <screen x="0" y="0" width="1920" height="1040" />
     </state>

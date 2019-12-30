@@ -33,7 +33,7 @@ public class SingleLinkedList extends LinearList {
 
 
     public SingleLinkedList () {
-        this.head = new Node(null);
+        this.head = null;
     }
 
     @Override
@@ -163,11 +163,21 @@ public class SingleLinkedList extends LinearList {
 
     @Override
     public boolean addall(int index, List c) {
-        if (this.size() <= index) {
+        if (this.size() <= index || c.size() == 0) {
             return false;
         }
         Node breakPiont = this.head;
-        for (int i = 0; i < index; i++ ) {
+        if (index == 0) {
+            this.head = new Node(c.get(0));
+            Node currentNode = this.head;
+            for (int i = 0; i < c.size(); i ++) {
+                currentNode.next = new Node(c.get(i));
+                currentNode = currentNode.next;
+            }
+            currentNode.next = breakPiont;
+            return true;
+        }
+        for (int i = 1; i < index; i++ ) {
             breakPiont = breakPiont.next;
         }
         Node BackPointOfbreakPiont = breakPiont.next;
@@ -202,18 +212,46 @@ public class SingleLinkedList extends LinearList {
         if (index >= this.size()) {
             return false;
         }
-        
+        if (index == 0) {
+            this.head.data = new o;
+            return true;
+        }
+        Node currentNode = this.head;
+        for (int i = 1; i < index; i++ ) {
+            currentNode = currentNode.next;
+        }
+        currentNode.data = o;
         return true;
     }
 
     @Override
-    public void add(int index, Object o) {
-
+    public boolean add(int index, Object o) {
+        if (index >= this.size()) {
+            return false;
+        }
+        Node breakPiont = this.head;
+        if (index == 0) {
+            this.head = new Node(o);
+            this.head.next = breakPiont;
+            return true;
+        }
+        for (int i = 1; i < index; i++ ) {
+            breakPiont = breakPiont.next;
+        }
+        Node BackPointOfbreakPiont = breakPiont.next;
+        breakPiont.next = new Node(o);
+        breakPiont.next.next = BackPointOfbreakPiont;
+        return true;
     }
 
     @Override
-    public void remove(int index) {
-
+    public boolean remove(int index) {
+        if (index >= this.size()) {
+            return false;
+        }
+        if (index == 0) {
+            this.head
+        }
     }
 
     @Override
