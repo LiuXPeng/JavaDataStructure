@@ -43,18 +43,21 @@ public class SingleLinkedList extends LinearList {
 
     @Override
     public Node getlast() {
-        Node pre = this.head;
-        Node cur = pre.next;
-        while (cur != null) {
-            pre = cur;
+        if (this.head == null) {
+            return null;
+        }
+        Node cur = this.head;
+        while (cur.next != null) {
             cur = cur.next;
         }
-        return pre;
+        return cur;
     }
 
     @Override
     public void removefirst() {
-        this.head = this.head.next;
+        if (this.head != null) {
+            this.head = this.head.next;
+        }
     }
 
     @Override
