@@ -62,8 +62,12 @@ public class SingleLinkedList extends LinearList {
 
     @Override
     public void removelast() {
+        if (this.head == null) {
+            return;
+        }
+
         if (this.head.next == null) {
-            this.removefirst();
+            this.head = null;
             return;
         }
         Node pre = this.head;
@@ -84,11 +88,13 @@ public class SingleLinkedList extends LinearList {
 
     @Override
     public void addlast(Object o) {
-        if (getfirst().data == null) {
-            getfirst().data = o;
+        if (this.head == null) {
+            Node newlast = new Node(o);
+            this.head = newlast;
             return;
         }
         this.getlast().next = new Node(o);
+        return;
     }
 
     @Override
