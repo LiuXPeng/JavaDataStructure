@@ -8,10 +8,12 @@ public class SingleLinkedList extends LinearList {
     private class Node {
         private Object data = null;
         private Node next = null;
-        public Node (Object t) {
+
+        public Node(Object t) {
             this.data = t;
         }
-        public Node () {
+
+        public Node() {
             this.data = null;
         }
     }
@@ -27,12 +29,12 @@ public class SingleLinkedList extends LinearList {
 //
 //    }
 
-    public SingleLinkedList (Object c) {
+    public SingleLinkedList(Object c) {
         this.head = new Node(c);
     }
 
 
-    public SingleLinkedList () {
+    public SingleLinkedList() {
         this.head = null;
     }
 
@@ -111,9 +113,6 @@ public class SingleLinkedList extends LinearList {
 
     @Override
     public int size() {
-        if (getfirst().next == null && getfirst().data == null) {
-            return 0;
-        }
         Node cur = getfirst();
         int length = 0;
         while (cur != null) {
@@ -124,16 +123,14 @@ public class SingleLinkedList extends LinearList {
     }
 
     @Override
-    public boolean add(Object o) {
-        return false;
+    public void add(Object o) {
+        addlast(o);
     }
-
 
     @Override
     public boolean remove(Object o) {
-        if (getfirst().data == o) {
-            removefirst();
-            return true;
+        if (getfirst() == null) {
+            return false;
         }
         Node pre = getfirst();
         Node cur = pre.next;
@@ -153,20 +150,16 @@ public class SingleLinkedList extends LinearList {
         if (c.size() == 0) {
             return;
         }
+        Node lastNode = null;
         if (this.size() != 0) {
-            Node lastNode = this.getlast();
-            for (Object o : c) {
-                Node newNode = new Node(o);
-                lastNode.next = newNode;
-                lastNode = newNode;
-            }
-            return;
+            lastNode = this.getlast();
+        } else {
+            lastNode = this.head;
         }
-        this.head.data = c.get(0);
-        Node lastNode = this.head;
-        for (int i = 1; i < c.size(); i++) {
-            lastNode.next = new Node(c.get(i));
-            lastNode = lastNode.next;
+        for (Object o : c) {
+            Node newNode = new Node(o);
+            lastNode.next = newNode;
+            lastNode = newNode;
         }
     }
 
@@ -175,24 +168,27 @@ public class SingleLinkedList extends LinearList {
         if (this.size() <= index || c.size() == 0) {
             return false;
         }
+        if (this.size() == 0) {
+            addall(c);
+            return true;
+        }
         Node breakPiont = this.head;
         if (index == 0) {
             this.head = new Node(c.get(0));
             Node currentNode = this.head;
-            for (int i = 0; i < c.size(); i ++) {
+            for (int i = 1; i < c.size(); i++) {
                 currentNode.next = new Node(c.get(i));
                 currentNode = currentNode.next;
             }
             currentNode.next = breakPiont;
             return true;
         }
-        for (int i = 1; i < index; i++ ) {
+        for (int i = 1; i < index; i++) {
             breakPiont = breakPiont.next;
         }
         Node BackPointOfbreakPiont = breakPiont.next;
         for (Object o : c) {
-            Node node = new Node(o);
-            breakPiont.next = node;
+            breakPiont.next = new Node(o);
             breakPiont = breakPiont.next;
         }
         breakPiont.next = BackPointOfbreakPiont;
@@ -201,16 +197,16 @@ public class SingleLinkedList extends LinearList {
 
     @Override
     public void clear() {
-        this.head = new Node();
+        this.head = null;
     }
 
     @Override
     public Object get(int index) {
-        if (index >= this.size()) {
+        if (index >= this.size() || index < 0) {
             return null;
         }
         Node node = this.head;
-        for (int i = 0; i <= index; i++) {
+        for (int i = 0; i < index; i++) {
             node = node.next;
         }
         return node.data;
@@ -218,15 +214,15 @@ public class SingleLinkedList extends LinearList {
 
     @Override
     public boolean set(int index, Object o) {
-        if (index >= this.size()) {
+        if (index >= this.size() || index < 0) {
             return false;
         }
         if (index == 0) {
-            this.head.data = new o;
+            this.head.data = o;
             return true;
         }
         Node currentNode = this.head;
-        for (int i = 1; i < index; i++ ) {
+        for (int i = 1; i < index; i++) {
             currentNode = currentNode.next;
         }
         currentNode.data = o;
@@ -235,16 +231,11 @@ public class SingleLinkedList extends LinearList {
 
     @Override
     public boolean add(int index, Object o) {
-        if (index >= this.size()) {
+        if (index >= this.size() || index < 0) {
             return false;
         }
         Node breakPiont = this.head;
-        if (index == 0) {
-            this.head = new Node(o);
-            this.head.next = breakPiont;
-            return true;
-        }
-        for (int i = 1; i < index; i++ ) {
+        for (int i = 0; i < index; i++) {
             breakPiont = breakPiont.next;
         }
         Node BackPointOfbreakPiont = breakPiont.next;
@@ -255,21 +246,47 @@ public class SingleLinkedList extends LinearList {
 
     @Override
     public boolean remove(int index) {
-        if (index >= this.size()) {
+        if (index >= this.size() || index < 0) {
             return false;
         }
         if (index == 0) {
-            this.head
+            this.head = this.head.next;
+            return true;
         }
+        Node breakNode = this.head;
+        for (int i = 1; i < index; i++) {
+            breakNode = breakNode.next;
+        }
+        breakNode.next = breakNode.next.next;
+        return true;
     }
 
     @Override
     public int indexof(Object o) {
-        return 0;
+        Node cur = this.head;
+        int index = 0;
+        while (cur != null) {
+            if (cur.data == o) {
+                return index;
+            }
+            index++;
+            cur = cur.next;
+        }
+        return -1;
     }
 
     @Override
     public int lastindexof(Object o) {
-        return 0;
+        Node cur = this.head;
+        int result = -1;
+        int index = 0;
+        while (cur != null) {
+            if (cur.data == o) {
+                result = index;
+            }
+            index++;
+            cur = cur.next;
+        }
+        return result;
     }
 }
